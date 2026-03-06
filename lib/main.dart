@@ -12,24 +12,15 @@ class StudentOrganizerApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Student Organizer',
+      title: 'Studor',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color(0xFF5C6BC0),
-          brightness: Brightness.light,
+          seedColor: const Color(0xFF7986CB),
+          brightness: Brightness.dark,        // ← add this
         ),
+        scaffoldBackgroundColor: const Color(0xFF121212),  // ← add this
         useMaterial3: true,
-        fontFamily: 'Roboto',
-        cardTheme: CardThemeData(
-          elevation: 0,
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16)),
-        ),
-        inputDecorationTheme: InputDecorationTheme(
-          border:
-              OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
-        ),
       ),
       home: const HomeScreen(),
     );

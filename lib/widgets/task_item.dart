@@ -16,16 +16,16 @@ class TaskItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 1),
       decoration: BoxDecoration(
         color: task.completed
-            ? Colors.green.shade50
-            : Theme.of(context).colorScheme.surface,
+            ? const Color(0xFF1A2A1A)
+            : const Color(0xFF1E1E1E),
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
           color: task.completed
-              ? Colors.green.shade200
-              : Colors.grey.shade200,
+              ? Colors.green.shade800
+              : Colors.grey.shade800,
         ),
         boxShadow: [
           BoxShadow(
@@ -36,7 +36,7 @@ class TaskItem extends StatelessWidget {
         ],
       ),
       child: ListTile(
-        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 0),
         leading: Checkbox(
           value: task.completed,
           onChanged: onToggle,
@@ -48,10 +48,10 @@ class TaskItem extends StatelessWidget {
         title: Text(
           task.title,
           style: TextStyle(
-            fontSize: 14,
+            fontSize: 12,
             fontWeight: FontWeight.w500,
             decoration: task.completed ? TextDecoration.lineThrough : null,
-            color: task.completed ? Colors.grey.shade500 : Colors.grey.shade800,
+            color: task.completed ? Colors.grey.shade500 : Colors.white,
           ),
         ),
         trailing: IconButton(

@@ -64,7 +64,9 @@ class _SubjectCardState extends State<SubjectCard> {
           controller: titleController,
           autofocus: true,
           textCapitalization: TextCapitalization.sentences,
+          style: const TextStyle(color: Colors.white),
           decoration: InputDecoration(
+          hintStyle: const TextStyle(color: Colors.white),
             hintText: 'Task title...',
             border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10)),
@@ -81,7 +83,7 @@ class _SubjectCardState extends State<SubjectCard> {
               child: const Text('Cancel')),
           ElevatedButton(
             style: ElevatedButton.styleFrom(backgroundColor: _cardColor,
-                foregroundColor: Colors.white,
+                foregroundColor: const Color(0xFF1E1E1E),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8))),
             onPressed: () => Navigator.of(ctx).pop(true),
@@ -127,7 +129,7 @@ class _SubjectCardState extends State<SubjectCard> {
               child: const Text('Cancel')),
           ElevatedButton(
             style: ElevatedButton.styleFrom(backgroundColor: Colors.red,
-                foregroundColor: Colors.white,
+                foregroundColor: const Color(0xFF1E1E1E),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8))),
             onPressed: () => Navigator.of(ctx).pop(true),
@@ -147,9 +149,9 @@ class _SubjectCardState extends State<SubjectCard> {
     final completedCount = _tasks.where((t) => t.completed).length;
 
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+      margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 1),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: const Color(0xFF1E1E1E),
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
@@ -165,11 +167,11 @@ class _SubjectCardState extends State<SubjectCard> {
           data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
           child: ExpansionTile(
             tilePadding:
-                const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
-            childrenPadding: const EdgeInsets.only(bottom: 12),
+                const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
+            childrenPadding: const EdgeInsets.only(bottom: 6),
             leading: Container(
-              width: 44,
-              height: 44,
+              width: 36,
+              height: 36,
               decoration: BoxDecoration(
                 color: _cardColor.withOpacity(0.15),
                 borderRadius: BorderRadius.circular(12),
@@ -180,8 +182,8 @@ class _SubjectCardState extends State<SubjectCard> {
               widget.subject.name,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 16,
-                color: Colors.grey.shade800,
+                fontSize: 10,
+                color: Colors.white,
               ),
             ),
             subtitle: _isLoading
@@ -191,7 +193,7 @@ class _SubjectCardState extends State<SubjectCard> {
                         ? 'No tasks yet'
                         : '$completedCount / ${_tasks.length} completed',
                     style: TextStyle(
-                        fontSize: 12,
+                        fontSize: 8,
                         color: _tasks.isEmpty
                             ? Colors.grey.shade400
                             : _cardColor),
@@ -212,7 +214,7 @@ class _SubjectCardState extends State<SubjectCard> {
                       style: TextStyle(
                           color: _cardColor,
                           fontWeight: FontWeight.bold,
-                          fontSize: 12),
+                          fontSize: 8),
                     ),
                   ),
                 const SizedBox(width: 4),
@@ -243,7 +245,7 @@ class _SubjectCardState extends State<SubjectCard> {
                         Text(
                           'No tasks yet. Add one below!',
                           style: TextStyle(
-                              color: Colors.grey.shade400, fontSize: 13),
+                              color: Colors.grey.shade400, fontSize: 8),
                         ),
                       ],
                     ),

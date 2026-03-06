@@ -1,5 +1,5 @@
-name: student_organizer
-description: A simple student organizer app to manage subjects and tasks.
+name: Studor
+description: Studor - Student Organizer App.
 publish_to: 'none'
 version: 1.0.0+1
 

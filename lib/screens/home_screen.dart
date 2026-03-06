@@ -39,7 +39,9 @@ class _HomeScreenState extends State<HomeScreen> {
           controller: nameController,
           autofocus: true,
           textCapitalization: TextCapitalization.words,
+          style: const TextStyle(color: Colors.white),
           decoration: InputDecoration(
+          hintStyle: const TextStyle(color: Colors.grey),
             hintText: 'e.g. Mathematics, Physics...',
             prefixIcon: const Icon(Icons.menu_book_rounded),
             border:
@@ -58,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: const Text('Cancel')),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFF5C6BC0),
+              backgroundColor: const Color(0xFF1F1F1F),
               foregroundColor: Colors.white,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8)),
@@ -80,17 +82,17 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF4F6FB),
+      backgroundColor: const Color(0xFF121212),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: const Color(0xFF5C6BC0),
+        backgroundColor: const Color(0xFF1F1F1F),
         foregroundColor: Colors.white,
         title: const Row(
           children: [
             Icon(Icons.school_rounded, size: 26),
             SizedBox(width: 10),
             Text(
-              'Student Organizer',
+              'Studor',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
           ],
